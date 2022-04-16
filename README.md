@@ -67,6 +67,7 @@ POST /api/v1/follow/
 
 ## А кто же автор?
 
-Анна :penguin:
+Анна 
+:penguin:
 Python-разработчик 
 + [GitHub](https://github.com/motheranarkia)

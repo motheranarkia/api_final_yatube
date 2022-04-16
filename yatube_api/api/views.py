@@ -4,19 +4,18 @@ from rest_framework.pagination import LimitOffsetPagination
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 
-from .serializers import (PostSerializer, GroupSerializer, CommentSerializer,
-                          FollowSerializer)
+from .serializers import (
+    PostSerializer, GroupSerializer, CommentSerializer, FollowSerializer
+)
 from posts.models import Post, Group, Follow
 from .permissions import IsOwnerOrReadOnly
 
 
-class ListCreateViewSet(mixins.ListModelMixin,
-                        mixins.CreateModelMixin,
-                        viewsets.GenericViewSet):
-    pass
-
-
-class FollowViewSet(ListCreateViewSet):
+class FollowViewSet(
+    mixins.ListModelMixin,
+    mixins.CreateModelMixin,
+    viewsets.GenericViewSet
+):
     permission_classes = [IsAuthenticated]
     serializer_class = FollowSerializer
     filter_backends = (filters.SearchFilter,)
